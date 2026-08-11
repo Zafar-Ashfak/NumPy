@@ -1,7 +1,7 @@
 import numpy as np
+import time
 
-# Array Creation
-
+# ************************* Array Creation *************************
 # 1. array() method can take list or tuple
 arr1 = np.array([1, 2, 3, 4, 5])
 print(arr1)
@@ -16,24 +16,46 @@ print(f"\n{arr3}")
 arr4 = np.arange(2, 21, 2)
 print(f"\n{arr4}")
 
+# ************************* Python List Vs NumPy Array *************************
 py_list = [1, 2, 3]
 np_arr = np.array([1, 2, 3])
 
-print(f"Python list: {py_list * 2}") # prints list twice
-print(f"Numpy array: {np_arr * 2}") # prints each element with multiply by 2
+print(f"\nPython list + list: {py_list + py_list}")
+print(f"NumPy array + array: {np_arr + np_arr}")
 
+print(f"Python list x list: {py_list * 2}") # prints list twice
+print(f"Numpy array x list: {np_arr * 2}") # prints each element with multiply by 2
+
+# ************************* Checking list and array execution time *************************
+
+start = time.perf_counter()
+my_list = [i * 2 for i in range(1_000_000)]
+list_time = time.perf_counter() - start
+
+start = time.perf_counter()
+my_arr = np.arange(1_000_000) * 2
+numpy_time = time.perf_counter() - start
+
+print(f"Python list execution time: {list_time:.6f} seconds")
+print(f"NumPy array execution time: {numpy_time:.6f} seconds")
+
+# ************************* All zeros matrix *************************
 zeros =  np.zeros((4, 3))
 print(f"\n{zeros}")
 
+# ************************* All ones matrix *************************
 ones = np.ones((3, 5))
 print(f"\n{ones}")
 
+# ************************* full matrix with all 99 elements *************************
 full = np.full((4, 4), 99)
 print(f"\n{full}")
 
+# ************************* All random elements matrix *************************
 random = np.random.random((3, 4))
 print(f"\n{random}")
 
+# ******************** Some addition Operations *******************
 # print even numbers
 even_nums = np.arange(2, 31, 2)
 print(f"\nEven numbers: {even_nums}")
@@ -41,6 +63,9 @@ print(f"\nEven numbers: {even_nums}")
 # print odd numbers
 odd_nums = np.arange(1, 32, 2)
 print(f"\nOdd numbers: {odd_nums}")
+
+
+# ****************** Vector, Matrix and Tensor **********************
 
 # Vector or 1D Array
 vector = np.arange(1, 21)
@@ -65,3 +90,25 @@ tensor = np.array([
 ])
 
 print(f"Tensor: {tensor}")
+
+
+# ************************* Array's Properties *************************
+np_arr = np.array([[1, 7, 3, 9],
+                   [5, 2, 1, 6],
+                   [4, 8, 3, 5]])
+
+print(f"\nArray's Shape: {np_arr.shape}")
+print(f"Size of the array: {np_arr.size}")
+print(f"Array dimension: {np_arr.ndim}D")
+print(f"Array's data type: {np_arr.dtype}")
+print(f"Each element of the array consuming : {np_arr.itemsize} bytes")
+print(f"Total memory consuming by array is: {np_arr.nbytes} bytes")
+print(f"Flags: {np_arr.flags}")
+
+print(f"\nOriginal Matrix: {np_arr}")
+print(f"Transposed Matrix:{np_arr.T}")
+
+
+
+
+
