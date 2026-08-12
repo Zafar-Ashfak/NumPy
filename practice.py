@@ -108,6 +108,8 @@ print(f"Flags: {np_arr.flags}")
 print(f"\nOriginal Matrix: {np_arr}")
 print(f"Transposed Matrix:{np_arr.T}")
 
+# ******************* Slicing and Sorting on Vector *******************
+
 
 
 
