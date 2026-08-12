@@ -1,6 +1,8 @@
 import numpy as np
 import time
 
+from numpy.ma.core import indices
+
 # ************************* Array Creation *************************
 # 1. array() method can take list or tuple
 arr1 = np.array([1, 2, 3, 4, 5])
@@ -128,5 +130,25 @@ matrix = np.array([[2, 1, 5, 8],
                    [5, 7, 9, 2],
                    [1, 5, 6, 3]])
 
-print(matrix[1]) # print the 1 row
-print(matrix[])
+
+print(f"Specific element: {matrix[0, 3]}") # 8
+print(f"Specific element: {matrix[2, 1]}") # 7
+print(f"Specific element: {matrix[1, 2]}") # 2
+
+print(matrix[1]) # prints entire row
+print(matrix[:, 2]) # prints entire col
+
+print("\nSorting operation on matrix")
+print(f"Row wise sorting: {np.sort(matrix, axis=1)}")
+print(f"\nColumn wise sorting: {np.sort(matrix, axis=0)}")
+
+# ******************* Filtering *******************
+arr = np.array([42, 7, 91, 23, 15, 68, 3, 55, 29, 84, 17, 63, 38, 5, 76, 21, 99, 46, 12, 71, 34, 88, 9, 57, 26])
+print("Array greater than 25:", arr[arr > 25])
+
+mask = arr % 2 == 0
+print(f"Even nums: {arr[mask]}")
+
+# ******************* Indices *******************
+indices = [1, 5, 13, 6, 8, 19]# 7 68 5 3
+print(f"Elements at indices: \n{indices}\n{arr[indices]}")
