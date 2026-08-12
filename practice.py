@@ -109,8 +109,24 @@ print(f"\nOriginal Matrix: {np_arr}")
 print(f"Transposed Matrix:{np_arr.T}")
 
 # ******************* Slicing and Sorting on Vector *******************
+print("\nSlicing operation on vector")
+vec = np.array([2, 9, 6, 5, 1, 8, 4, 3, 7, 6, 1, 9])
+print(vec[1: 6])
+print(vec[ : 9])
+print(vec[5 : ])
+print(vec[0 : 10: 2])
+print(vec[::-1])
 
+print("\nSorting operation on vector")
+sorted_vec = np.sort(vec)
+print(sorted_vec)
 
+# ******************* Slicing and Sorting on Matrix *******************
+print("\nSlicing operation on matrix")
+matrix = np.array([[2, 1, 5, 8],
+                   [6, 3, 2, 4],
+                   [5, 7, 9, 2],
+                   [1, 5, 6, 3]])
 
-
-
+print(matrix[1]) # print the 1 row
+print(matrix[])
