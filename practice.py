@@ -1,8 +1,6 @@
 import numpy as np
 import time
 
-from numpy.ma.core import indices
-
 # ************************* Array Creation *************************
 # 1. array() method can take list or tuple
 arr1 = np.array([1, 2, 3, 4, 5])
@@ -143,12 +141,21 @@ print(f"Row wise sorting: {np.sort(matrix, axis=1)}")
 print(f"\nColumn wise sorting: {np.sort(matrix, axis=0)}")
 
 # ******************* Filtering *******************
-arr = np.array([42, 7, 91, 23, 15, 68, 3, 55, 29, 84, 17, 63, 38, 5, 76, 21, 99, 46, 12, 71, 34, 88, 9, 57, 26])
-print("Array greater than 25:", arr[arr > 25])
+arr = np.array([12, 7, 19, 13, 5, 8, 3, 16, 2, 8, 7, 9, 1, 5, 11, 4, 16, 19, 14])
+print("Array greater than 25:", arr[arr > 15])
 
 mask = arr % 2 == 0
 print(f"Even nums: {arr[mask]}")
 
 # ******************* Indices *******************
-indices = [1, 5, 13, 6, 8, 19]# 7 68 5 3
+indices = [1, 2, 6, 8, 9] # 7 19 3 2 8
 print(f"Elements at indices: \n{indices}\n{arr[indices]}")
+
+# ******************* where(condition) method *******************
+odds = np.where(arr % 2 != 0)
+print(f"\nOdd elements in the array are: {arr[odds]}")
+
+# ******************* where(condition, x, y) method *******************
+
+
+
