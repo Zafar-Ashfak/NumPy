@@ -156,6 +156,41 @@ odds = np.where(arr % 2 != 0)
 print(f"\nOdd elements in the array are: {arr[odds]}")
 
 # ******************* where(condition, x, y) method *******************
+new_arr = np.where(arr >= 12, arr * 2, arr * 3)
+print(new_arr)
 
+# ******************* Concatenation using concatenate() method *******************
+nums1 = np.array([1, 2, 3])
+nums2 = np.array([4, 5, 6])
+nums3 = np.array([7, 8, 9, 10])
 
+print(f"Nums array 1: {nums1}")
+print(f"Nums array 2: {nums2}")
+concatenated_nums = np.concatenate((nums1, nums2, nums3))
+print(f"Concatenated array: {concatenated_nums}")
 
+# ******************* Compatibility Check *******************
+print()
+print(nums1.shape == nums2.shape)
+print(nums1.shape == nums3.shape)
+
+# ******************* Add rows and cols *******************
+
+new_matrix = np.array([[2, 5, 1, 9],
+                       [4, 1, 6, 8],
+                       [9, 3, 7, 4]])
+
+# ******************* Add new row using vstack() method *******************
+
+new_added_row_matrix = np.vstack((new_matrix, [11, 14, 8, 12]))
+print(f"\nMatrix: {new_matrix}")
+print(f"\nNew added row matrix: {new_added_row_matrix}")
+
+# ******************* Add new col using hstack() method *******************
+
+new_added_col_matrix = np.hstack((new_matrix, [[3], [2], [4]]))
+print(f"\nNew added col matrix: {new_added_col_matrix}")
+
+# ******************* Delete Operation on vector *******************
+num_list = np.array([1, 8, 5, 2, 9, 6, 3, 1, 5, 4, 10, 7])
+print(np.delete(num_list, [2, 5, 6, 9]))
