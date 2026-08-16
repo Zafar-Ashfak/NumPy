@@ -194,3 +194,47 @@ print(f"\nNew added col matrix: {new_added_col_matrix}")
 # ******************* Delete Operation on vector *******************
 num_list = np.array([1, 8, 5, 2, 9, 6, 3, 1, 5, 4, 10, 7])
 print(np.delete(num_list, [2, 5, 6, 9]))
+
+# Data_structure = [restaurant_id, 2023, 2024, 2025, 2026]
+sales_data = np.array([
+    [1, 150000, 180000, 220000, 250000], # Paradise Biryani
+    [2, 200000, 140000, 160000, 190000], # Beijing Bites
+    [3, 120000, 210000, 260000, 300000], # Pizza Hub
+    [4, 180000, 230000, 240000, 270000], # Burger Point
+    [5, 160000, 185000, 205000, 300000], # Chai Point
+    [6, 132000, 110000, 190500, 245000], # King's Restaurant
+    [7, 146000, 153200, 210500, 251000]]) # Pista House
+
+print("\n\nZOMATO SALES DATA ANALYSIS")
+print(f"Sales data shape: {sales_data.shape}")
+
+
+#  ******************* Operation on sales data *******************
+# Display 3rd rows
+print("\n", sales_data[4])
+
+# Display 1st 3 rows
+print("\n", sales_data[: 3])
+
+# Remove restaurant_id with slicing
+
+print(f"\nSales data without restaurant_id: \n{sales_data[:, 1: ]}")
+
+# Display total sales per year
+print(f"\nTotal sales per year: {np.sum((sales_data[:, 1:]), axis=1)}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
