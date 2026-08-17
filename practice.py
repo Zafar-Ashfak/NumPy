@@ -210,22 +210,29 @@ print(f"Sales data shape: {sales_data.shape}")
 
 
 #  ******************* Operation on sales data *******************
-# Display 3rd rows
+# Display 4th rows
 print("\n", sales_data[4])
 
 # Display 1st 3 rows
 print("\n", sales_data[: 3])
 
 # Remove restaurant_id with slicing
-
 print(f"\nSales data without restaurant_id: \n{sales_data[:, 1: ]}")
 
 # Display total sales per year
-print(f"\nTotal sales per year: {np.sum((sales_data[:, 1:]), axis=1)}")
+print(f"\nTotal sales per year: {np.sum(sales_data[:, 1:], axis=0)}")
 
+# Display minimum sale per restaurant
+print(f"\nMinimum sale per restaurant: {np.min(sales_data[:, 1: ], axis=1)}")
 
+# Display maximum sale per year
+print(f"\nMaximum sale per year: {np.max(sales_data[:, 1: ], axis=0)}")
 
+# Display average sale per year
+print(f"\nAverage sale per restaurant: {np.average(sales_data[:, 1: ], axis=1)}")
 
+# Display average sale per year using mean method
+print(f"\nAverage sale per restaurant: {np.mean(sales_data[:, 1: ], axis=1)}")
 
 
 
