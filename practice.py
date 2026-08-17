@@ -1,5 +1,6 @@
 import numpy as np
 import time
+import matplotlib.pyplot as plt
 
 # ************************* Array Creation *************************
 # 1. array() method can take list or tuple
@@ -234,10 +235,17 @@ print(f"\nAverage sale per restaurant: {np.average(sales_data[:, 1: ], axis=1)}"
 # Display average sale per year using mean method
 print(f"\nAverage sale per restaurant: {np.mean(sales_data[:, 1: ], axis=1)}")
 
+# Calculate cumulative sum per restaurant
+print(f"Cumulative sum is: {np.cumsum(sales_data[:, 1: ], axis=1)}")
 
-
-
-
+# ******************* Sales Data Graph Plotting *******************
+plt.figure(figsize=(8, 5))
+plt.title("Average cumulative sales across all restaurant")
+plt.plot(np.cumsum(np.mean(sales_data[:, 1: ], axis=0)))
+plt.xlabel("Years")
+plt.ylabel("Sales")
+plt.grid(True)
+plt.show()
 
 
 
