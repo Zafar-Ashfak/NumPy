@@ -247,8 +247,7 @@ plt.ylabel("Sales")
 plt.grid(True)
 plt.show()
 
-# ******************* Vector *******************
-# 1. Addition
+# ******************* Vectorize Operation *******************
 vec1 = np.array([10, 6, 6, 9, 8])
 vec2 = np.array([5, 3, 4, 2, 5])
 
@@ -258,9 +257,21 @@ print(f"Sum: {vec1 + vec2}")
 print(f"Sum: {vec1 - vec2}")
 print(f"Sum: {vec1 * vec2}")
 print(f"Sum: {vec1 / vec2}")
-
-# ******************* Dot Product *******************
 print(f"Dot product: {np.dot(vec1, vec2)}")
+print(f"Square: {vec1 ** 2}")
+
+# Vectorize operation on sales_data
+monthly_income = sales_data[:, 1: ] / 12
+print(monthly_income)
+
+# Vectorize operation on string array
+animals = np.array(['cat', 'dog', 'horse', 'cow', 'camel', 'goat'])
+to_upper = np.vectorize(str.upper)
+print(to_upper(animals))
+
+to_title = np.vectorize(str.title)
+print(to_title(animals))
+
 
 
 
