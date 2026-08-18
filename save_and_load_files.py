@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 arr1 = np.arange(5, 51, 5)
 
@@ -24,4 +25,3 @@ print(my_arr2)
 
 my_arr3 = np.load('myarr3.npy')
 print(my_arr3)
-
