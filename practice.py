@@ -247,9 +247,20 @@ plt.ylabel("Sales")
 plt.grid(True)
 plt.show()
 
+# ******************* Vector *******************
+# 1. Addition
+vec1 = np.array([10, 6, 6, 9, 8])
+vec2 = np.array([5, 3, 4, 2, 5])
 
+print(f"Vector 1: {vec1}")
+print(f"Vector 2: {vec2}")
+print(f"Sum: {vec1 + vec2}")
+print(f"Sum: {vec1 - vec2}")
+print(f"Sum: {vec1 * vec2}")
+print(f"Sum: {vec1 / vec2}")
 
-
+# ******************* Dot Product *******************
+print(f"Dot product: {np.dot(vec1, vec2)}")
 
 
 
