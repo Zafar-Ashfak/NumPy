@@ -1,3 +1,5 @@
+# Practice all numpy operations
+
 import numpy as np
 import time
 import matplotlib.pyplot as plt
